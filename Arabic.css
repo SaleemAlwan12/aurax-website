@@ -124,6 +124,7 @@ body {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    position: relative;
 }
 
 .hamburger span {
@@ -132,6 +133,41 @@ body {
     background: var(--text-primary);
     margin: 3px 0;
     transition: 0.3s;
+}
+
+.hamburger-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border-glass);
+    border-radius: 10px;
+    padding: 1rem;
+    min-width: 200px;
+    z-index: 1000;
+    margin-top: 10px;
+}
+
+.hamburger-menu.active {
+    display: block;
+}
+
+.hamburger-menu .nav-link {
+    display: block;
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem 0;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu .nav-link:hover {
+    background: var(--bg-glass);
+    color: var(--primary-color);
 }
 
 /* Hero Section */
