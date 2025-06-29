@@ -1294,13 +1294,18 @@ body {
         padding: 0.7rem 0;
     }
     #owner-image, .contact-item img#owner-image {
-        width: 40px !important;
-        height: 40px !important;
-        min-width: 40px !important;
-        min-height: 40px !important;
-        max-width: 40px !important;
-        max-height: 40px !important;
-        border-width: 2px !important;
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        min-height: 44px !important;
+        max-width: 44px !important;
+        max-height: 44px !important;
+        border-radius: 50% !important;
+        border: 2.5px solid #00b3e6 !important;
+        object-fit: cover !important;
+        box-shadow: 0 0 0 2px #181c24;
+        background: #222;
+        display: block;
     }
     .contact-item h4 {
         font-size: 1rem;
