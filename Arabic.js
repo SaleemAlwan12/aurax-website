@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initParallaxEffects();
     initImageExpansion();
     initLanguageSwitcher();
+    initMobileOptimizations();
 });
 
 // Navigation functionality
@@ -854,4 +855,55 @@ function showLanguageNotification(lang) {
             document.body.removeChild(notification);
         }, 300);
     }, 2000);
+}
+
+// Mobile optimizations
+function initMobileOptimizations() {
+    // Prevent zoom on double tap
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', function (event) {
+        const now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
+
+    // Improve touch interactions
+    const touchElements = document.querySelectorAll('.btn, .nav-link, .project-card, .contact-item');
+    touchElements.forEach(element => {
+        element.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.98)';
+        });
+        
+        element.addEventListener('touchend', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+
+    // Optimize scroll performance on mobile
+    let ticking = false;
+    function updateScroll() {
+        ticking = false;
+        // Scroll-based animations here
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateScroll);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', requestTick);
+
+    // Improve modal touch interactions
+    const modal = document.getElementById('project-modal');
+    if (modal) {
+        modal.addEventListener('touchstart', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    }
 } 
