@@ -1196,14 +1196,6 @@ body {
         font-size: 1rem;
     }
     
-    .modal-content {
-        margin: 5% auto;
-        padding: 1.5rem;
-        width: 95%;
-        max-height: 90vh;
-        overflow-y: auto;
-    }
-    
     .hamburger-menu {
         position: fixed;
         top: 80px;
@@ -1225,6 +1217,44 @@ body {
         text-align: center;
         font-size: 1.2rem;
         border-radius: 10px;
+    }
+
+    .projects-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .project-card {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 1.2rem;
+        margin: 0 auto 1.5rem auto;
+    }
+    .project-3d-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .satellite-3d img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    .project-info {
+        text-align: center;
+    }
+    .project-features {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    .btn {
+        width: 100%;
+        max-width: 250px;
+        margin: 0.5rem auto;
+        display: block;
     }
 }
 
