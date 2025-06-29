@@ -23,6 +23,13 @@ function initNavigation() {
         hamburger.addEventListener('click', function() {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
+            
+            // Prevent body scroll when menu is open
+            if (navMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         });
     }
 
@@ -31,7 +38,17 @@ function initNavigation() {
         link.addEventListener('click', function() {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
+            document.body.style.overflow = '';
         });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
     });
 
     // Header scroll effect
@@ -49,9 +66,11 @@ function initNavigation() {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
+            
             if (targetSection) {
                 const headerHeight = header.offsetHeight;
                 const targetPosition = targetSection.offsetTop - headerHeight;
+                
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
