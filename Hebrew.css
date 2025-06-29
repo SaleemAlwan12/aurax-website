@@ -1225,36 +1225,54 @@ body {
         gap: 2rem;
     }
     .project-card {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-        padding: 1.2rem;
+        width: 96vw;
+        max-width: 98vw;
         margin: 0 auto 1.5rem auto;
+        padding: 1rem 0.5rem;
+        border-radius: 18px;
+        box-sizing: border-box;
+        background: var(--bg-secondary, #181c24);
     }
     .project-3d-container {
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        gap: 0.5rem;
     }
     .satellite-3d img {
-        max-width: 100%;
+        max-width: 220px;
+        width: 80vw;
         height: auto;
         display: block;
-        margin: 0 auto;
+        margin: 0 auto 1rem auto;
+        border-radius: 12px;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.15);
     }
     .project-info {
         text-align: center;
+        width: 100%;
+        padding: 0 0.5rem;
+    }
+    .project-info h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    .project-info p {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
     }
     .project-features {
         justify-content: center;
         flex-wrap: wrap;
-        gap: 0.5rem;
+        gap: 0.4rem;
+        margin-bottom: 0.7rem;
     }
     .btn {
         width: 100%;
-        max-width: 250px;
+        max-width: 220px;
         margin: 0.5rem auto;
         display: block;
+        font-size: 1rem;
+        padding: 0.7rem 0;
     }
 }
 
