@@ -1239,18 +1239,21 @@ body {
         gap: 0.5rem;
     }
     .satellite-3d img {
-        max-width: 220px;
-        width: 80vw;
+        max-width: 70vw;
+        max-height: 180px;
+        width: 100%;
         height: auto;
         display: block;
         margin: 0 auto 1rem auto;
         border-radius: 12px;
         box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+        object-fit: contain;
     }
     .project-info {
         text-align: center;
         width: 100%;
         padding: 0 0.5rem;
+        margin-top: 0;
     }
     .project-info h3 {
         font-size: 1.1rem;
@@ -1273,6 +1276,10 @@ body {
         display: block;
         font-size: 1rem;
         padding: 0.7rem 0;
+    }
+    .project-card {
+        min-height: unset;
+        height: auto;
     }
 }
 
