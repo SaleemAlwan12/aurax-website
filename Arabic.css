@@ -1301,6 +1301,21 @@ body {
         font-size: 1rem;
         padding: 0.7rem 0;
     }
+    #owner-image, .contact-item img#owner-image {
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+        min-height: 40px !important;
+        max-width: 40px !important;
+        max-height: 40px !important;
+        border-width: 2px !important;
+    }
+    .contact-item h4 {
+        font-size: 1rem;
+    }
+    .contact-item p {
+        font-size: 0.95rem;
+    }
 }
 
 @media (max-width: 480px) {
