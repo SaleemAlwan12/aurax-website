@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurax Technology - Advancing AI, Robotics & Satellite Technologies</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="Logo.png" alt="Aurax Sat Logo" class="rotating-logo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;" />
+                <span>Aurax Sat</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link" data-translate="nav-home">Home</a></li>
+                <li><a href="#projects" class="nav-link" data-translate="nav-projects">Our Projects</a></li>
+                <li><a href="#about" class="nav-link" data-translate="nav-about">About Us</a></li>
+                <li><a href="#contact" class="nav-link" data-translate="nav-contact">Contact</a></li>
+            </ul>
+            <div class="language-switcher">
+                <button class="planet-btn" id="planetBtn" data-lang="en" onclick="switchLanguage('en')">
+                    <i class="fas fa-globe"></i>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="space-video.mp4" type="video/mp4">
+                <source src="space-video.webm" type="video/webm">
+                <!-- Fallback for browsers that don't support video -->
+                <div class="stars"></div>
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span data-translate="hero-title-1">Advancing the Future</span><br>
+                <span class="gradient-text" data-translate="hero-title-2"> of Satellite Technology</span>
+            </h1>
+            <p class="hero-subtitle" data-translate="hero-subtitle">
+                Pioneering breakthroughs in artificial intelligence satellite technologies
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary" data-translate="btn-explore">Explore Projects</a>
+                <a href="#about" class="btn btn-secondary" data-translate="btn-learn">Learn More</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Our Projects</h2>
+            <div class="projects-grid">
+                <!-- Satellite Project -->
+                <div class="project-card featured">
+                    <div class="project-3d-container">
+                        <div class="satellite-3d" id="satellite-3d">
+                            <img src="auraxsat.png" alt="AuraxSat-R Satellite" class="real-satellite rotating-satellite" style="max-width: 320px; max-height: 260px; display: block; margin: 0 auto;" />
+                        </div>
+                        <div class="project-info">
+                            <h3>Advanced Satellite Technology</h3>
+                            <p>Next-generation satellite systems with AI-powered navigation and real-time data processing capabilities.</p>
+                            <div class="project-features">
+                                <span class="feature">AI Navigation</span>
+                                <span class="feature">Real-time Processing</span>
+                                <span class="feature">Advanced Sensors</span>
+                            </div>
+                            <button class="btn btn-outline" onclick="openProjectDetails('satellite')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rocket Launch Project -->
+                <div class="project-card featured">
+                    <div class="project-3d-container">
+                        <div class="satellite-3d" id="rocket-3d">
+                            <img src="auraxsat2.png" alt="AuraxSat-R Satellite" class="real-satellite rotating-satellite" style="max-width: 320px; max-height: 260px; display: block; margin: 0 auto;" />
+                        </div>
+                        <div class="project-info">
+                            <h3>Space Rocket Launch</h3>
+                            <p>Our latest rocket is set to launch into space, carrying advanced technology and scientific instruments to explore new frontiers.</p>
+                            <div class="project-features">
+                                <span class="feature">High Thrust</span>
+                                <span class="feature">Precision Guidance</span>
+                                <span class="feature">Scientific Payload</span>
+                            </div>
+                            <button class="btn btn-outline" onclick="openProjectDetails('rocket')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Control Center Project -->
+                <div class="project-card featured">
+                    <div class="project-3d-container">
+                        <div class="satellite-3d" id="control-3d">
+                            <img src="auraxsat3.png" alt="AuraxSat-R Satellite" class="real-satellite clickable-image" id="control-image" style="max-width: 320px; max-height: 260px; display: block; margin: 0 auto; border: 3px solid #00b3e6; border-radius: 15px; cursor: pointer; transition: all 0.3s ease;" />
+                        </div>
+                        <div class="project-info">
+                            <h3>Control Center & Mission Control</h3>
+                            <p>Advanced control systems and mission control centers for managing rocket launches and satellite operations with real-time monitoring and precision control.</p>
+                            <div class="project-features">
+                                <span class="feature">Real-time Monitoring</span>
+                                <span class="feature">Precision Control</span>
+                                <span class="feature">Data Analytics</span>
+                            </div>
+                            <button class="btn btn-outline" onclick="openProjectDetails('control')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Aurax Sat</h2>
+                    <p>We are at the forefront of technological innovation, pushing the boundaries of what's possible in AI satellite technologies. Our mission is to create solutions that shape the future of humanity.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Team Members</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <i class="fas fa-microchip"></i>
+                            <span>AI & ML</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-satellite-dish"></i>
+                            <span>Satellite Tech</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-cogs"></i>
+                            <span>Software</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-rocket"></i>
+                            <span>Space Tech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>20auraxtechnologies25@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+972 (052) 290-1320</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>israel ,street 1701<br>Kisra Village, TC 20138</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <img src="Owner.png" alt="Saleem Alwan" id="owner-image" class="clickable-image" style="width: 60px; height: 60px; border-radius: 50%; border: 3px solid #00b3e6; object-fit: cover; cursor: pointer; transition: all 0.3s ease;" />
+                            <div>
+                                <h4>Company owner</h4>
+                                <p>Saleem Alwan<br>Certificates : CEH & CS50 & RS & ARSET & ACF </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+                <script>
+                // إرسال البيانات إلى السيرفر مع الموقع الجغرافي
+                document.addEventListener('DOMContentLoaded', function() {
+                  const form = document.getElementById('contactForm');
+                  form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const formData = new FormData(form);
+                    const data = {
+                      name: formData.get('name'),
+                      email: formData.get('email'),
+                      message: formData.get('message'),
+                      location: ''
+                    };
+                    // جلب الموقع الجغرافي
+                    if (navigator.geolocation) {
+                      navigator.geolocation.getCurrentPosition(function(pos) {
+                        data.location = `lat:${pos.coords.latitude},lon:${pos.coords.longitude}`;
+                        sendData(data);
+                      }, function() {
+                        sendData(data);
+                      }, {timeout: 3000});
+                    } else {
+                      sendData(data);
+                    }
+                    function sendData(data) {
+                      fetch('http://localhost:3001/contact', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                      })
+                      .then(res => res.json())
+                      .then(res => {
+                        if(res.success) {
+                          // alert('Message sent successfully!');
+                          form.reset();
+                        } else {
+                          // alert('Failed to send message.');
+                        }
+                      })
+                      .catch(() => {
+                        // alert('Failed to send message.');
+                      });
+                    }
+                  });
+                });
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-satellite"></i>
+                        <span>Aurax Sat</span>
+                    </div>
+                    <p>Advancing the future through innovative technology solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Aurax Sat. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

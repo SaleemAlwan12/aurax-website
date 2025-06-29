@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أوراكس تكنولوجي - تطوير الذكاء الاصطناعي والروبوتات وتقنيات الأقمار الصناعية</title>
+    <link rel="stylesheet" href="Arabic.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="Logo.png" alt="شعار أوراكس سات" class="rotating-logo" style="width: 40px; height: 40px; border-radius: 50%; margin-left: 10px;" />
+                <span>أوراكس سات</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">الرئيسية</a></li>
+                <li><a href="#projects" class="nav-link">مشاريعنا</a></li>
+                <li><a href="#about" class="nav-link">من نحن</a></li>
+                <li><a href="#contact" class="nav-link">اتصل بنا</a></li>
+            </ul>
+            <div class="language-switcher">
+                <button class="planet-btn" id="planetBtn" data-lang="ar" onclick="switchLanguage('ar')">
+                    <i class="fas fa-globe"></i>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="space-video.mp4" type="video/mp4">
+                <source src="space-video.webm" type="video/webm">
+                <!-- Fallback for browsers that don't support video -->
+                <div class="stars"></div>
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span>تطوير المستقبل</span><br>
+                <span class="gradient-text">لتقنيات الأقمار الصناعية</span>
+            </h1>
+            <p class="hero-subtitle">
+                رواد في الاختراقات التقنية في مجال الذكاء الاصطناعي وتقنيات الأقمار الصناعية
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">استكشف المشاريع</a>
+                <a href="#about" class="btn btn-secondary">اعرف المزيد</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">مشاريعنا</h2>
+            <div class="projects-grid">
+                <!-- Satellite Project -->
+                <div class="project-card featured">
+                    <div class="project-3d-container">
+                        <div class="satellite-3d" id="satellite-3d">
+                            <img src="auraxsat.png" alt="قمر أوراكس-ر الصناعي" class="real-satellite rotating-satellite" style="max-width: 320px; max-height: 260px; display: block; margin: 0 auto;" />
+                        </div>
+                        <div class="project-info">
+                            <h3>تقنيات الأقمار الصناعية المتقدمة</h3>
+                            <p>أنظمة أقمار صناعية من الجيل القادم مع ملاحة ذكية تعتمد على الذكاء الاصطناعي وقدرات معالجة البيانات في الوقت الفعلي.</p>
+                            <div class="project-features">
+                                <span class="feature">ملاحة ذكية</span>
+                                <span class="feature">معالجة فورية</span>
+                                <span class="feature">مستشعرات متقدمة</span>
+                            </div>
+                            <button class="btn btn-outline" onclick="openProjectDetails('satellite')">عرض التفاصيل</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rocket Launch Project -->
+                <div class="project-card featured">
+                    <div class="project-3d-container">
+                        <div class="satellite-3d" id="rocket-3d">
+                            <img src="auraxsat2.png" alt="قمر أوراكس-ر الصناعي" class="real-satellite rotating-satellite" style="max-width: 320px; max-height: 260px; display: block; margin: 0 auto;" />
+                        </div>
+                        <div class="project-info">
+                            <h3>إطلاق صاروخ فضائي</h3>
+                            <p>صاروخنا الأحدث على وشك الإطلاق إلى الفضاء، حاملاً تقنيات متقدمة وأدوات علمية لاستكشاف آفاق جديدة.</p>
+                            <div class="project-features">
+                                <span class="feature">دفع عالي</span>
+                                <span class="feature">توجيه دقيق</span>
+                                <span class="feature">حمولة علمية</span>
+                            </div>
+                            <button class="btn btn-outline" onclick="openProjectDetails('rocket')">عرض التفاصيل</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Control Center Project -->
+                <div class="project-card featured">
+                    <div class="project-3d-container">
+                        <div class="satellite-3d" id="control-3d">
+                            <img src="auraxsat3.png" alt="قمر أوراكس-ر الصناعي" class="real-satellite clickable-image" id="control-image" style="max-width: 320px; max-height: 260px; display: block; margin: 0 auto; border: 3px solid #00b3e6; border-radius: 15px; cursor: pointer; transition: all 0.3s ease;" />
+                        </div>
+                        <div class="project-info">
+                            <h3>مركز التحكم ومراقبة المهام</h3>
+                            <p>أنظمة تحكم متقدمة ومراكز مراقبة المهام لإدارة إطلاق الصواريخ وعمليات الأقمار الصناعية مع مراقبة فورية وتحكم دقيق.</p>
+                            <div class="project-features">
+                                <span class="feature">مراقبة فورية</span>
+                                <span class="feature">تحكم دقيق</span>
+                                <span class="feature">تحليل البيانات</span>
+                            </div>
+                            <button class="btn btn-outline" onclick="openProjectDetails('control')">عرض التفاصيل</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">عن أوراكس سات</h2>
+                    <p>نحن في طليعة الابتكار التقني، ندفع حدود ما هو ممكن في تقنيات الذكاء الاصطناعي والأقمار الصناعية. مهمتنا هي خلق حلول تشكل مستقبل البشرية.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">مشروع مكتمل</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">عضو فريق</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">سنة خبرة</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <i class="fas fa-microchip"></i>
+                            <span>الذكاء الاصطناعي وتعلم الآلة</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-satellite-dish"></i>
+                            <span>تقنيات الأقمار الصناعية</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-cogs"></i>
+                            <span>البرمجيات</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-rocket"></i>
+                            <span>تقنيات الفضاء</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">تواصل معنا</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>البريد الإلكتروني</h4>
+                            <p>20auraxtechnologies25@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>الهاتف</h4>
+                            <p>+972 (052) 290-1320</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>العنوان</h4>
+                            <p>إسرائيل، شارع 1701<br>قرية كسرى، TC 20138</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <img src="Owner.png" alt="سليم علوان" id="owner-image" class="clickable-image" style="width: 60px; height: 60px; border-radius: 50%; border: 3px solid #00b3e6; object-fit: cover; cursor: pointer; transition: all 0.3s ease;" />
+                            <div>
+                                <h4>مالك الشركة</h4>
+                                <p>سليم علوان<br>الشهادات: CEH & CS50 & RS & ARSET & ACF</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="اسمك" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="بريدك الإلكتروني" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="رسالتك" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
+                </form>
+                <script>
+                    // إرسال البيانات إلى السيرفر مع الموقع الجغرافي
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const form = document.getElementById('contactForm');
+                        form.addEventListener('submit', function(e) {
+                            e.preventDefault();
+                            const formData = new FormData(form);
+                            const data = {
+                                name: formData.get('name'),
+                                email: formData.get('email'),
+                                message: formData.get('message'),
+                                location: ''
+                            };
+
+                            // جلب الموقع الجغرافي
+                            if (navigator.geolocation) {
+                                navigator.geolocation.getCurrentPosition(function(pos) {
+                                    data.location = `lat:${pos.coords.latitude},lon:${pos.coords.longitude}`;
+                                    sendData(data);
+                                }, function() {
+                                    sendData(data);
+                                }, {timeout: 3000});
+                            } else {
+                                sendData(data);
+                            }
+
+                            function sendData(data) {
+                                fetch('http://localhost:3001/contact', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify(data)
+                                })
+                                .then(res => res.json())
+                                .then(res => {
+                                    if(res.success) {
+                                        // alert('تم إرسال الرسالة بنجاح!');
+                                        form.reset();
+                                    } else {
+                                        // alert('فشل في إرسال الرسالة.');
+                                    }
+                                })
+                                .catch(() => {
+                                    // alert('فشل في إرسال الرسالة.');
+                                });
+                            }
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-satellite"></i>
+                        <span>أوراكس سات</span>
+                    </div>
+                    <p>تطوير المستقبل من خلال الحلول التقنية المبتكرة.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#projects">المشاريع</a></li>
+                        <li><a href="#about">من نحن</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>قانوني</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
+                        <li><a href="terms-conditions.html">الشروط والأحكام</a></li>
+                        <li><a href="cookie-policy.html">سياسة ملفات تعريف الارتباط</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 أوراكس سات. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <script src="Arabic.js"></script>
+</body>
+</html> 

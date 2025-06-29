@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אוראקס טכנולוגיה - קידום בינה מלאכותית, רובוטיקה וטכנולוגיות לוויין</title>
+    <link rel="stylesheet" href="Hebrew.css">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="Logo.png" alt="לוגו אוראקס סאט" class="rotating-logo" style="width: 40px; height: 40px; border-radius: 50%; margin-left: 10px;" />
+                <span>אוראקס סאט</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">בית</a></li>
+                <li><a href="#projects" class="nav-link">הפרויקטים שלנו</a></li>
+                <li><a href="#about" class="nav-link">אודותינו</a></li>
+                <li><a href="#contact" class="nav-link">צור קשר</a></li>
+            </ul>
+            <div class="language-switcher">
+                <button class="planet-btn" id="planetBtn" data-lang="he" onclick="switchLanguage('he')">
+                    <i class="fas fa-globe"></i>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="space-video.mp4" type="video/mp4">
+                <source src="space-video.webm" type="video/webm">
+                <!-- Fallback for browsers that don't support video -->
+                <div class="stars"></div>
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span>קידום העתיד</span><br>
+                <span class="gradient-text">של טכנולוגיית הלוויינים</span>
+            </h1>
+            <p class="hero-subtitle">
+                חלוצים בפריצות דרך בטכנולוגיות בינה מלאכותית ולוויינים
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">חקור פרויקטים</a>
+                <a href="#about" class="btn btn-secondary">למד עוד</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">הפרויקטים שלנו</h2>
+            <div class="projects-grid">
+                <!-- Satellite Project -->
+                <div class="project-card featured">
+                    <div class="project-3d-container">
+                        <div class="satellite-3d" id="satellite-3d">
+                            <img src="auraxsat.png" alt="לוויין אוראקס-ר" class="real-satellite rotating-satellite" style="max-width: 320px; max-height: 260px; display: block; margin: 0 auto;" />
+                        </div>
+                        <div class="project-info">
+                            <h3>טכנולוגיית לוויין מתקדמת</h3>
+                            <p>מערכות לוויינים מהדור הבא עם ניווט מבוסס בינה מלאכותית ויכולות עיבוד נתונים בזמן אמת.</p>
+                            <div class="project-features">
+                                <span class="feature">ניווט בינה מלאכותית</span>
+                                <span class="feature">עיבוד בזמן אמת</span>
+                                <span class="feature">חיישנים מתקדמים</span>
+                            </div>
+                            <button class="btn btn-outline" onclick="openProjectDetails('satellite')">צפה בפרטים</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rocket Launch Project -->
+                <div class="project-card featured">
+                    <div class="project-3d-container">
+                        <div class="satellite-3d" id="rocket-3d">
+                            <img src="auraxsat2.png" alt="לוויין אוראקס-ר" class="real-satellite rotating-satellite" style="max-width: 320px; max-height: 260px; display: block; margin: 0 auto;" />
+                        </div>
+                        <div class="project-info">
+                            <h3>שיגור רקטה לחלל</h3>
+                            <p>הרקטה האחרונה שלנו עומדת לשוגר לחלל, נושאת טכנולוגיה מתקדמת ומכשירים מדעיים לחקירת גבולות חדשים.</p>
+                            <div class="project-features">
+                                <span class="feature">דחף גבוה</span>
+                                <span class="feature">הנחיה מדויקת</span>
+                                <span class="feature">מטען מדעי</span>
+                            </div>
+                            <button class="btn btn-outline" onclick="openProjectDetails('rocket')">צפה בפרטים</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Control Center Project -->
+                <div class="project-card featured">
+                    <div class="project-3d-container">
+                        <div class="satellite-3d" id="control-3d">
+                            <img src="auraxsat3.png" alt="לוויין אוראקס-ר" class="real-satellite clickable-image" id="control-image" style="max-width: 320px; max-height: 260px; display: block; margin: 0 auto; border: 3px solid #00b3e6; border-radius: 15px; cursor: pointer; transition: all 0.3s ease;" />
+                        </div>
+                        <div class="project-info">
+                            <h3>מרכז בקרה ובקרת משימה</h3>
+                            <p>מערכות בקרה מתקדמות ומרכזי בקרת משימה לניהול שיגורי רקטות ופעולות לוויינים עם ניטור בזמן אמת ובקרה מדויקת.</p>
+                            <div class="project-features">
+                                <span class="feature">ניטור בזמן אמת</span>
+                                <span class="feature">בקרה מדויקת</span>
+                                <span class="feature">ניתוח נתונים</span>
+                            </div>
+                            <button class="btn btn-outline" onclick="openProjectDetails('control')">צפה בפרטים</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">אודות אוראקס סאט</h2>
+                    <p>אנחנו בחזית החדשנות הטכנולוגית, דוחפים את הגבולות של מה שאפשר בטכנולוגיות בינה מלאכותית ולוויינים. המשימה שלנו היא ליצור פתרונות שמעצבים את עתיד האנושות.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">פרויקטים הושלמו</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">חברי צוות</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">שנות ניסיון</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <i class="fas fa-microchip"></i>
+                            <span>בינה מלאכותית ולמידת מכונה</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-satellite-dish"></i>
+                            <span>טכנולוגיית לוויינים</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-cogs"></i>
+                            <span>תוכנה</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-rocket"></i>
+                            <span>טכנולוגיית חלל</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">צור קשר</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>אימייל</h4>
+                            <p>20auraxtechnologies25@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>טלפון</h4>
+                            <p>+972 (052) 290-1320</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>כתובת</h4>
+                            <p>ישראל, רחוב 1701<br>כפר כסרא, TC 20138</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <img src="Owner.png" alt="סלים אלוואן" id="owner-image" class="clickable-image" style="width: 60px; height: 60px; border-radius: 50%; border: 3px solid #00b3e6; object-fit: cover; cursor: pointer; transition: all 0.3s ease;" />
+                            <div>
+                                <h4>בעל החברה</h4>
+                                <p>סלים אלוואן<br>תעודות: CEH & CS50 & RS & ARSET & ACF</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="שמך" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="האימייל שלך" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="ההודעה שלך" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">שלח הודעה</button>
+                </form>
+                <script>
+                    // إرسال البيانات إلى السيرفر مع الموقع الجغرافي
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const form = document.getElementById('contactForm');
+                        form.addEventListener('submit', function(e) {
+                            e.preventDefault();
+                            const formData = new FormData(form);
+                            const data = {
+                                name: formData.get('name'),
+                                email: formData.get('email'),
+                                message: formData.get('message'),
+                                location: ''
+                            };
+
+                            // جلب الموقع الجغرافي
+                            if (navigator.geolocation) {
+                                navigator.geolocation.getCurrentPosition(function(pos) {
+                                    data.location = `lat:${pos.coords.latitude},lon:${pos.coords.longitude}`;
+                                    sendData(data);
+                                }, function() {
+                                    sendData(data);
+                                }, {timeout: 3000});
+                            } else {
+                                sendData(data);
+                            }
+
+                            function sendData(data) {
+                                fetch('http://localhost:3001/contact', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify(data)
+                                })
+                                .then(res => res.json())
+                                .then(res => {
+                                    if(res.success) {
+                                        // alert('Message sent successfully!');
+                                        form.reset();
+                                    } else {
+                                        // alert('Failed to send message.');
+                                    }
+                                })
+                                .catch(() => {
+                                    // alert('Failed to send message.');
+                                });
+                            }
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-satellite"></i>
+                        <span>אוראקס סאט</span>
+                    </div>
+                    <p>קידום העתיד באמצעות פתרונות טכנולוגיים חדשניים.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>קישורים מהירים</h4>
+                    <ul>
+                        <li><a href="#home">בית</a></li>
+                        <li><a href="#projects">פרויקטים</a></li>
+                        <li><a href="#about">אודות</a></li>
+                        <li><a href="#contact">צור קשר</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>משפטי</h4>
+                    <ul>
+                        <li><a href="privacy-policy.html">מדיניות פרטיות</a></li>
+                        <li><a href="terms-conditions.html">תנאים והגבלות</a></li>
+                        <li><a href="cookie-policy.html">מדיניות עוגיות</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 אוראקס סאט. כל הזכויות שמורות.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <script src="Hebrew.js"></script>
+</body>
+</html> 
