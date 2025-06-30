@@ -1,5 +1,7 @@
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
+    window.scrollTo(0, 0);
+    setTimeout(() => window.scrollTo(0, 0), 10);
     // Initialize all functionality
     initNavigation();
     initScrollAnimations();
@@ -796,18 +798,7 @@ function initLanguageSwitcher() {
 
 // Function to switch between language pages
 function switchLanguage(lang) {
-    const currentPage = window.location.pathname.split('/').pop() || 'Hebrew.html';
-    
-    // Add rotation animation to button
-    const planetBtn = document.getElementById('planetBtn');
-    if (planetBtn) {
-        planetBtn.style.transform = 'rotate(360deg)';
-        setTimeout(() => {
-            planetBtn.style.transform = '';
-        }, 500);
-    }
-    
-    // Navigate to appropriate page based on language
+    // Always go to the page without hash
     switch(lang) {
         case 'en':
             window.location.href = 'index.html';
@@ -819,7 +810,6 @@ function switchLanguage(lang) {
             window.location.href = 'Hebrew.html';
             break;
     }
-    
     // Show language notification
     showLanguageNotification(lang);
 }
