@@ -398,8 +398,10 @@ body {
 .scroll-arrow {
     width: 30px;
     height: 30px;
-    border-left: 2px solid var(--text-secondary);
+    border-right: 2px solid var(--text-secondary);
     border-bottom: 2px solid var(--text-secondary);
+    border-left: none;
+    border-top: none;
     transform: rotate(45deg);
 }
 

@@ -10,6 +10,16 @@ document.addEventListener('DOMContentLoaded', function() {
     initImageExpansion();
     initLanguageSwitcher();
     initMobileOptimizations();
+
+    const heroVideo = document.querySelector('.hero-video');
+    if (heroVideo) {
+        heroVideo.addEventListener('ended', function() {
+            heroVideo.play();
+        });
+        setInterval(() => {
+            if (heroVideo.paused) heroVideo.play();
+        }, 2000);
+    }
 });
 
 // Navigation functionality
